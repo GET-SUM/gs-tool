@@ -4,6 +4,6 @@ new tool for the pentest on linux
 
 command
 
-# ./gs-tooll
-# enter
-# help
+ ./gs-tooll
+ enter
+ help
