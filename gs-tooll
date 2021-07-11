@@ -244,7 +244,7 @@ echo -----------------------
 echo
 read -p 'interface : ' interfacesn
 read -p 'ip : ' ipsn
-driftnet -i $interfacesn $ipsn | xterm urlsnarf -i $interfacesn $ipsn
+xterm -e driftnet -i $interfacesn $ipsn | xterm -e urlsnarf -i $interfacesn $ipsn
 
 fi
 
