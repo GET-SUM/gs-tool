@@ -83,7 +83,7 @@ echo -e "\e[1;35m "
 echo    ---------------
 echo     clear : clear 
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] monitoring mode : monitor      | [+] siffing : sniff   '
+echo '  [+] monitoring mode : monitor      | [+] sniffing : sniff  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] network scan : nc              | [+] crack handshake : crh   '
 echo '  ---------------------------------------------------------------------  '
@@ -200,13 +200,13 @@ fi
 
 
 
-if [ choix = "ls" ]
+if [ $choix = "ls" ]
 then
 ls
 fi
 
 
-if [ choix = "shell" ]
+if [ $choix = "shell" ]
 then
 exit
 fi
@@ -234,7 +234,7 @@ fi
 
 
 
-if [ choix = "sniff" ]
+if [ $choix = "sniff" ]
 then
 clear
 echo 
