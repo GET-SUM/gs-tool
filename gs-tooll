@@ -242,7 +242,7 @@ echo -----------------------
 echo    - sniffing mitm -
 echo -----------------------
 echo
-read -p 'interface : 'interfacesn
+read -p 'interface : ' interfacesn
 read -p 'ip : ' ipsn
 driftnet -i $interfacesn $ipsn | xterm urlsnarf -i $interfacesn $ipsn
 
