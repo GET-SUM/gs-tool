@@ -141,7 +141,7 @@ echo
 echo
 echo -e ' \e[1;31m '
 
-read -p ' ip de la machine : ' ipm 
+read -p ' machine ip : ' ipm 
 ping -c 2 $ipm
 nmap -sS -sV -Pn -v $ipm
 fi
@@ -303,7 +303,7 @@ read -p  'bssid : ' bssidda
 echo
 echo mac address client
 echo
-read -p 'mac add :' macda
+read -p 'mac adresse :' macda
 echo
 echo interface
 echo
