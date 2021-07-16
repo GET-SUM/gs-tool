@@ -85,7 +85,7 @@ echo '  [+] network scan : nc              | [+] crack handshake : crack       '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] denial of service : dos        | [+] backdoor reverse_tcp: backd   '
+echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] retrival of handshake : rtvh   | [+] update                        '
 echo '  ---------------------------------------------------------------------  '
@@ -313,7 +313,7 @@ xterm -title"Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda -c $m
 fi
 
 
-if [ $choix = "backd" ]
+if [ $choix = "bacd" ]
 then
 clear
 echo  -----------------------
