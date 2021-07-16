@@ -225,6 +225,7 @@ apt-get install aircrack-ng
 apt install nmap
 apt-get install driftnet
 apt-get install urlsnarf
+apt install msfvenom
 echo '[end]'
 fi
 
