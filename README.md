@@ -1,4 +1,4 @@
-# gs-tooll
+# gs-tool
 new tool for the pentest on linux
 
 
