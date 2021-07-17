@@ -89,7 +89,7 @@ echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] retrival of handshake : rtvh   | [+] bluetooth DOS : bdos          '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] install dependances : ind      | [+] update    m                   '
+echo '  [+] install dependances : ind      | [+] update    m m m               '
 echo '  ---------------------------------------------------------------------  '
 
 fi
