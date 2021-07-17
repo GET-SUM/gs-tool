@@ -381,6 +381,7 @@ rm -r -f gs-tool
 git clone https://github.com/GET-SUM/gs-tool
 cd gs-tool
 chmod 777 *
+sudo ./gs-tool
 echo
 echo [updated programme]
 fi
