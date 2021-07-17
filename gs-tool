@@ -87,9 +87,9 @@ echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] retrival of handshake : rtvh   | [+] update                        '
+echo '  [+] retrival of handshake : rtvh   | [+] bluetooth DOS : bdos          '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] install dependances : ind      | [+] bluetooth DOS : bdos          '
+echo '  [+] install dependances : ind      | [+] update                        '
 echo '  ---------------------------------------------------------------------  '
 
 fi
