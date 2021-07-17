@@ -8,7 +8,7 @@ echo -e "\e[1;34m   ____ ____      _____ ___   ___  _      "
 echo -e "\e[1;34m  / ___/ ___|    |_   _/ _ \ / _ \| |     "
 echo -e "\e[1;37m | |  _\___ \ _____| || | | | | | | |     "
 echo -e "\e[1;31m | |_| |___) |_____| || |_| | |_| | |___  "
-echo -e "\e[1;31m  \____|____/      |_| \___/ \___/|_____m "
+echo -e "\e[1;31m  \____|____/      |_| \___/ \___/|_____| "
 echo    
 echo   by get-sum
 echo  ------------
@@ -89,7 +89,7 @@ echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] retrival of handshake : rtvh   | [+] bluetooth DOS : bdos          '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] install dependances : ind      | [+] update                        '
+echo '  [+] install dependances : ind      | [+] update    m                   '
 echo '  ---------------------------------------------------------------------  '
 
 fi
