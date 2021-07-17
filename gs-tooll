@@ -352,9 +352,9 @@ fi
 if [ $choix = "update" ]
 then
 cd ..
-rm -r -f gs-tooll
-git clone https://github.com/GET-SUM/gs-tooll
-cd gs-tooll
+rm -r -f gs-tool
+git clone https://github.com/GET-SUM/gs-tool
+cd gs-tool
 chmod 777 *
 echo
 echo [updated programme]
