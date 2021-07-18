@@ -227,7 +227,9 @@ apt-get install driftnet
 apt-get install urlsnarf
 apt install msfvenom
 apt install l2ping
+echo -e  '\e[1;35m '
 apt-get install l2ping
+apt install hcitool
 echo '[end]'
 fi
 
