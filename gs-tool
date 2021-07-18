@@ -363,7 +363,7 @@ echo  -    bluetooth attack    -
 echo  --------------------------
 echo
 echo
-hictool scan
+hcitool scan
 echo
 echo
 echo
