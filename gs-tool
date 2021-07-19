@@ -158,6 +158,15 @@ echo -e ' \e[1;31m '
 read -p 'bssid: ' apbssid
 read -p 'chanel : ' apch
 xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w gs-tool.cap $winterface | xterm -e airodump-ng $winterface
+echo
+echo
+echo
+echo
+echo  Do you want crack hanshake y (yes) or n (no) 
+echo
+read -p 'option : ' choixrtv
+echo
+echo
 clear
 
 fi
@@ -255,7 +264,7 @@ fi
 
 
 
-if [ $choix = "crack" ]
+if [ $choix = "crack" ] & if [ $choixrtv : "o" ]
 then
 clear
 echo ------------------
