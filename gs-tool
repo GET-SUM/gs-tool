@@ -266,7 +266,7 @@ fi
 
 
 
-if [ $choix = "crack" ] or [ $choixrtv : "y" ]
+if [ $choix = "crack" ] && [ $choixrtv : "y" ]
 then
 clear
 echo ------------------
@@ -274,13 +274,18 @@ echo   crack handshake
 echo  - aircrack-ng -
 echo ------------------
 echo file.cap
+echo
 read -p 'file : ' capcr
+echo
 echo
 echo bssid of acces point
 echo
+echo
 read -p 'bssid : ' bssidcr
 echo
+echo
 echo wep   or wpa
+echo
 echo
 read -p 'sercurity : ' ecript
 crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $bssidcr -a $ecript $capcr
