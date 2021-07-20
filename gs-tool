@@ -266,7 +266,7 @@ fi
 
 
 
-if [ $choix = "crack" ] OR [ $choixrtv : "y" ]
+if [ $choix = "crack" ] or [ $choixrtv : "y" ]
 then
 clear
 echo ------------------
