@@ -164,7 +164,9 @@ echo
 echo
 echo  "Do you want crack hanshake y (yes) or n (no) "
 echo
+echo -e ' \e[1;31m '
 read -p 'option : ' choixrtv
+echo -e ' \e[1;37m '
 echo
 echo
 clear
@@ -264,7 +266,7 @@ fi
 
 
 
-if [ $choix = "crack" ] & if [ $choixrtv : "o" ]
+if [ $choix = "crack" ] OR [ $choixrtv : "y" ]
 then
 clear
 echo ------------------
