@@ -319,6 +319,7 @@ echo
 echo  acces point bssid
 echo
 echo
+echo
 echo -e  '\e[1;31m '
 read -p  'bssid : ' bssidda
 echo -e  '\e[1;37m '
