@@ -371,6 +371,7 @@ echo
 echo
 echo -e  '\e[1;31m '
 read -p  'bssid : ' bssidda
+echo -e  '\e[1;37m '
 echo
 echo
 echo
@@ -379,7 +380,9 @@ echo   channel of acces point
 echo
 echo
 echo
+echo -e  '\e[1;31m '
 read -p 'channel : ' chanelda
+echo -e  '\e[1;37m '
 echo
 echo
 n_secondes=7
