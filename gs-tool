@@ -439,9 +439,9 @@ echo
 echo
 echo
 echo
-echo  --------------------------
-echo  -    bluetooth attack    -
-echo  --------------------------
+echo  ' -------------------------- '
+echo  ' -    bluetooth attack    - '
+echo  ' -------------------------- '
 echo
 echo
 hcitool scan
@@ -465,8 +465,8 @@ chmod 777 *
 sudo ./gs-tool
 echo
 echo [updated programme]
-
 fi
+
 
 
 done
