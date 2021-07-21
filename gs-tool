@@ -359,12 +359,15 @@ sleep 7
 kill $!
 cat lewifi.txt
 rm -r -f lewifi.txt
+echo -e  '\e[1;33m '
+echo
 echo -------------------------
 echo  Deauthentication Attack
 echo  - need monitor monde -
 echo -------------------------
 echo
 echo
+echo -e  '\e[1;31m '
 echo  acces point bssid
 echo
 echo
