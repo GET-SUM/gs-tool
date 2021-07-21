@@ -354,7 +354,7 @@ echo
 echo
 read -p 'interface : ' interfaceda
 n_secondes=7
-(" xterm -title wait... -e airodump-ng $interfaceda >> lewifi.txt") &
+(xterm -title wait... -e "airodump-ng $interfaceda >> lewifi.txt") &
 sleep 7
 kill $!
 cat lewifi.txt
@@ -386,9 +386,10 @@ echo -e  '\e[1;37m '
 echo
 echo
 n_secondes=7
-( "xterm -title wait... -e airodump-ng --bssid $bssidda -c $chanelda $interfaceda >> lewifi1234.txt") & 
+( xterm -title wait... -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda >> lewifi1234.txt") & 
 sleep 7
 kill $!
+rm -r -f lewifi1234.txt
 clear
 echo -e  '\e[1;32m '
 echo attack started ... 
