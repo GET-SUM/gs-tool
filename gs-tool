@@ -354,7 +354,7 @@ echo
 echo
 read -p 'interface : ' interfaceda
 n_secondes=7
-(" xterm -title wait... -e "airodump-ng $interfaceda >> lewifi.txt") &
+(" xterm -title wait... -e airodump-ng $interfaceda >> lewifi.txt") &
 sleep 7
 kill $!
 cat lewifi.txt
