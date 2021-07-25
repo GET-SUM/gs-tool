@@ -312,8 +312,11 @@ echo
 echo ip adress of target
 echo
 read -p 'ip : ' ipsn
+echo
+echo  file of capture
+echo
 read -p 'file : ' sniffcap
-xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> sniffcap"  | xterm -title sniff -e  "urlsnarf -i $interfacesn $ipsn >> sniffcap"
+xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> sniffcap.cap"  | xterm -title sniff -e  "urlsnarf -i $interfacesn $ipsn >> sniffcap.cap"
 fi
 
 
