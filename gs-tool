@@ -81,7 +81,7 @@ echo     clear : clear
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] monitoring mode : monitor      | [+] sniffing : sniff              '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] network scan : nc              | [+] crack handshake : crack       '
+echo '  [+] network scan : nc              | [+] crack wifi : crack            '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
 echo '  ---------------------------------------------------------------------  '
