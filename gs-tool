@@ -79,7 +79,7 @@ echo -e "\e[1;35m "
 echo    ---------------
 echo     clear : clear 
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] monitoring mode : monitor      | [+] sniffing : sniff              '
+echo '  [+] sniffing : sniff               | [+] monitor mode : monitor        '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] network scan : nc              | [+] crack wifi : crack            '
 echo '  ---------------------------------------------------------------------  '
@@ -87,11 +87,10 @@ echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
 echo '  ---------------------------------------------------------------------  '
 echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] retrival of handshake : rtvh   | [+] bluetooth DOS : bdos          '
+echo '  [+] update                         | [+] bluetooth DOS : bdos          '
 echo '  ---------------------------------------------------------------------  '
-echo '  [+] install dependances : ind      | [+] update                        '
+echo '  [+] install dependances : ind      | [+] captif portal attack (soon)   '
 echo '  ---------------------------------------------------------------------  '
-
 fi
 
 
