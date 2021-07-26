@@ -78,19 +78,19 @@ clear
 echo -e "\e[1;35m "
 echo    ---------------
 echo     clear : clear 
-echo '  ---------------------------------------------------------------------  '
-echo '  [+] sniffing : sniff               | [+] monitor mode : monitor        '
-echo '  ---------------------------------------------------------------------  '
-echo '  [+] network scan : nc              | [+] crack wifi : crack            '
-echo '  ---------------------------------------------------------------------  '
-echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da  '
-echo '  ---------------------------------------------------------------------  '
-echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd  '
-echo '  ---------------------------------------------------------------------  '
-echo '  [+] update                         | [+] bluetooth DOS : bdos          '
-echo '  ---------------------------------------------------------------------  '
-echo '  [+] install dependances : ind      | [+] captif portal attack (soon)   '
-echo '  ---------------------------------------------------------------------  '
+echo '  ------------------------------------------------------------------------  '
+echo '  [+] sniffing : sniff               | [+] monitor mode : monitor           '
+echo '  ------------------------------------------------------------------------  '
+echo '  [+] network scan : nc              | [+] crack wifi : crack               '
+echo '  ------------------------------------------------------------------------  '
+echo '  [+] ports scan : pscan (nmap)      | [+] Deauthentication Attack : da     '
+echo '  ------------------------------------------------------------------------  '
+echo '  [+] denial of service : dos        | [+] backdoor undetectable : bacd     '
+echo '  ------------------------------------------------------------------------  '
+echo '  [+] update                         | [+] bluetooth DOS : bdos             '
+echo '  ------------------------------------------------------------------------  '
+echo '  [+] install dependances : ind      | [+] captif portal attack (soon)      '
+echo '  ------------------------------------------------------------------------  '
 fi
 
 
