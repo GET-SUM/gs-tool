@@ -31,12 +31,12 @@ clear
 while [ test ]
 do
 
-
-echo    -e "\e[1;34m       ----------- "
-echo      -e "\e[1;37m        GS-TOOL "
-echo    -e "\e[1;31m       -----------"
-echo -e " \e[1;36m by get-sum"
-echo                 " ------------"
+echo    -e "\e[1;01m "
+echo    -e "\e[1;31m           ----------- "
+echo      -e "\e[1;34m           GS-TOOL "
+echo    -e "\e[1;31m           -----------"
+echo -e " \e[1;34m       by get-sum"
+echo -e " \e[1;31m      -------------"
 echo 
 echo -e ' \e[1;31m '
 echo 
@@ -75,7 +75,8 @@ fi
 if [ $choix = "help" ]
 then
 clear
-echo -e "\e[1;35m "
+echo -e "\e[1;01m "
+echo -e "\e[1;33m "
 echo    ---------------
 echo     clear : clear 
 echo '  ------------------------------------------------------------------------  '
