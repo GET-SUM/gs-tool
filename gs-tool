@@ -412,11 +412,21 @@ fi
 
 if [ $choix = "da" ]
 then
+echo -e  '\e[1;33m '
 clear
 echo
+echo       --------------------------
+echo         Deauthentication Attack
+echo         - need monitor monde -
+echo       --------------------------
+echo
+echo   -   INTERFACE : wlan0, wlan0mon    -  
+echo   ------------------------------------
+echo   
 echo
 echo
 echo
+echo -e  '\e[1;31m '
 read -p 'interface : ' interfaceda
 n_secondes=7
 (xterm -title wait... -e "airodump-ng $interfaceda >> lewifi.txt") &
@@ -426,10 +436,10 @@ cat lewifi.txt
 rm -r -f lewifi.txt
 echo -e  '\e[1;33m '
 echo
-echo -------------------------
-echo  Deauthentication Attack
-echo  - need monitor monde -
-echo -------------------------
+echo  -------------------------
+echo   Deauthentication Attack
+echo   - need monitor monde -
+echo  -------------------------
 echo
 echo
 echo -e  '\e[1;31m '
