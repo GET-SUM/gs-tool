@@ -105,12 +105,20 @@ fi
 
 if [ $choix = "ifconfig" ]
 then
+echo
+echo
 ifconfig
+echo
+echo
 fi
 
 if [ $choix = "iwconfig" ]
 then
+echo
+echo
 iwconfig
+echo
+echo
 fi
 
 if [ $choix = "exit" ]
