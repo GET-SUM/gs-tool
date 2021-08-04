@@ -316,6 +316,7 @@ apt-get install hping3
 echo -e  '\e[1;32m '
 echo [OK] hping3
 apt-get install aircrack-ng
+apt install aircrack-ng
 apt install nmap
 apt-get install driftnet
 apt install driftnet
@@ -325,6 +326,8 @@ apt install msfvenom
 apt install l2ping
 echo -e  '\e[1;35m '
 apt-get install l2ping
+apt install apache2
+echo apache2 [ok]
 apt install hcitool
 apt install arpspoof
 apt-get install arpspoof
