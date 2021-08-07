@@ -35,8 +35,8 @@ echo    -e "\e[1;01m "
 echo    -e "\e[1;31m           ----------- "
 echo      -e "\e[1;34m             GS-TOOL "
 echo    -e "\e[1;31m           -----------"
-echo -e " \e[1;34m        by get-sum           MeNu    "
-echo -e " \e[1;31m      -------------        -------      "
+echo -e " \e[1;34m        by get-sum           - MeNu -   "
+echo -e " \e[1;31m      -------------         ----------      "
 echo 
 echo -e ' \e[1;31m '
 echo 
