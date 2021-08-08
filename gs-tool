@@ -112,6 +112,18 @@ echo
 echo
 fi
 
+
+
+
+if [ $choix = "net" ]
+then
+rm -rf *.cap
+rm -rf *.csv
+rm -rf *.netxml
+fi
+
+
+
 if [ $choix = "iwconfig" ]
 then
 echo
