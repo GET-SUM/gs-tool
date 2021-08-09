@@ -14,9 +14,9 @@ echo '      \|_______|\_________\                 \|__|  \|_______|\|_______|\|_
 echo '               \|_________|                                                      '
 echo                                                                                                              
 echo    
-echo -e " \e[1;35m         by get-sum   "
+echo -e " \e[1;34m         by get-sum   "
 echo -e " \e[1;31m        ------------ "
-echo -e " \e[1;35m               insta _.get_sum._ "
+echo -e " \e[1;34m               insta _.get_sum._ "
 echo -e " \e[1;31m            ----------------------- "
 echo
 echo -e " \e[1;35m ENTER "
