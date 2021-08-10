@@ -110,6 +110,7 @@ fi
 if [ $choix = "shutdown" ]
 then
 shutdown -h now
+fi
 
 
 if [ $choix = "ifconfig" ]
