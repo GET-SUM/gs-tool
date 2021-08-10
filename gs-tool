@@ -107,6 +107,11 @@ clear
 fi
 
 
+if [ $choix = "shutdown" ]
+then
+shutdown -h now
+
+
 if [ $choix = "ifconfig" ]
 then
 echo
