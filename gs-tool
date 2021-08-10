@@ -159,7 +159,7 @@ echo   "   NeTwoRk ScAn  "
 echo   "-----------------"
 echo
 echo
-xterm -title "network-scan" -hold -e netdiscover
+xterm -title "network-scan" -hold -e ./scan | echo -e "\e[1;35m close window for stop network scan "
 fi
 
 
