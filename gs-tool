@@ -336,7 +336,6 @@ echo [OK] XTERM
 echo -e  '\e[1;30m '
 apt-get install hping3
 echo -e  '\e[1;32m '
-echo [OK] hping3
 apt-get install aircrack-ng
 apt install aircrack-ng
 apt install nmap
@@ -353,6 +352,8 @@ echo apache2 [ok]
 apt install hcitool
 apt install arpspoof
 apt-get install arpspoof
+apt install nslookup
+apt-get install nslookup
 clear
 echo '[end]'
 fi
