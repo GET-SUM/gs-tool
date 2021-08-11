@@ -113,6 +113,12 @@ shutdown -h now
 fi
 
 
+if [ $choix = "scan" ]
+then
+./scan
+fi
+
+
 if [ $choix = "ifconfig" ]
 then
 echo
