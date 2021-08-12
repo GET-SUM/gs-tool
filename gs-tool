@@ -134,6 +134,10 @@ echo
 fi
 
 
+if [ $choix = "nano" ]
+then
+nano gs-tool
+fi
 
 
 if [ $choix = "net" ]
