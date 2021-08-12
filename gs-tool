@@ -59,19 +59,24 @@ echo -e "\e[1;35m        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo              
 echo -e "$\e[1;33m   by get-sum"
 echo " ------------"
+echo "\e[1;31 "
+echo
+echo
+read -p 'interface : ' interface 
 sudo ifconfig wlan0 down
-echo [OK] Wlan0 down
+echo [OK] $interface down
 airmon-ng check kill
 echo [OK] check kill
-iwconfig wlan0 mode monitor
-echo [OK] wlan0 mode monitor
-iwconfig wlan0
-clear 
+iwconfig $interface mode monitor
+
+     if [ $? -eq 0 ]
+     then
+     echo -e "\e[1;33" [OK]"\e[1;32" $interface mode monitor
+     else
+     echo -e "\e[1;31" [!] divice $interface not compatible
+     fi
  
-read -p 'interface : ' interface 
 
-
-xterm -hold -e airodump-ng $interface
 fi
 
 
