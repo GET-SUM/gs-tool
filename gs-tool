@@ -63,15 +63,15 @@ echo -e "\e[1;31 "
 echo
 echo
 read -p ' interface : ' interface 
-sudo ifconfig wlan0 down
+sudo ifconfig wlan0 down &>/dev/null
 echo [OK] $interface down
-airmon-ng check kill
+airmon-ng check kill &>/dev/null
 echo [OK] check kill
 iwconfig $interface mode monitor
 
      if [ $? -eq 0 ]
      then
-     echo -e "\e[1;33" [OK] $interface mode monitor
+     echo -e "\e[1;32" [OK] $interface mode monitor
      else
      echo -e "\e[1;31" [!] divice $interface not compatible
      fi
