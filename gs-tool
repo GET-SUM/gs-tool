@@ -20,6 +20,7 @@ echo
 echo -e " \e[1;35m ENTER "
 echo -e " \e[1;31m "
 read -p 'gs-tool : ' choix1
+echo
 
 clear
 
