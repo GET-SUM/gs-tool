@@ -139,6 +139,12 @@ nano gs-tool
 fi
 
 
+if [ $choix = "reboot" ]
+then
+reboot
+fi 
+
+
 if [ $choix = "net" ]
 then
 rm -rf *.cap
