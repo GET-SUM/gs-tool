@@ -133,6 +133,12 @@ echo
 fi
 
 
+if [ $choix = "reboot" ]
+then
+reboot
+fi
+
+
 if [ $choix = "nano" ]
 then
 nano gs-tool
