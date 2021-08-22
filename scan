@@ -5,7 +5,7 @@ echo -e "\e[1;34m"plees waitt ...
 scan1='1'
 while [ $? -ne "1" ]
 do
-timeout 0.6 ping -a -c 1 -i 0.1 192.168.$scan1.1 &>/dev/null
+timeout 0.52 ping -a -c 1 -i 0.1 192.168.$scan1.1 &>/dev/null
 
 
 
@@ -14,7 +14,7 @@ then
    scan='1'
    for i in {1..255}
    do
-   timeout 0.6 ping -a -c 1 -i 0.1 192.168.$scan1.$scan &>/dev/null
+   timeout 0.52 ping -a -c 1 -i 0.1 192.168.$scan1.$scan &>/dev/null
         	if [ $? -eq 0 ]
 		then
 		echo -e "\e[1;33m"_________________________________________________________________
