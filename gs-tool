@@ -475,7 +475,6 @@ cd capture-sniffing
    if [ $? -eq 1 ]
    then
    mkdir capture-sniffing
-   fi
    else
    cd ..
    fi
