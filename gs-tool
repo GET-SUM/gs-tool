@@ -156,6 +156,10 @@ then
 xterm -title dumpw -e airodump-ng wlan0
 fi
 
+if [ $choix = "top" ]
+then
+top
+fi
 
 if [ $choix = "net" ]
 then
