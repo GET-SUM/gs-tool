@@ -151,6 +151,12 @@ reboot
 fi 
 
 
+if [ $choix = "dumpw" ]
+then
+xterm -title dumpw -e airodump-ng wlan0
+fi
+
+
 if [ $choix = "net" ]
 then
 rm -rf *.cap
