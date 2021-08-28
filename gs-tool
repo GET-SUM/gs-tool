@@ -151,7 +151,7 @@ reboot
 fi 
 
 
-if [ $choix = "dumpw" ]
+if [ $choix = "dump" ]
 then
 xterm -title dumpw -e airodump-ng wlan0
 fi
@@ -182,8 +182,6 @@ fi
 
 if [ $choix = "nc" ]
 then
-
-
 clear
 echo -e "\e[1;31m       "
 echo   "-----------------"
@@ -280,19 +278,10 @@ read -p 'security : ' apsec
              
               
               
-              
- 
+
  
  if [ $apsec = "wpa" ] 
  then
- echo
- echo
- echo  'name of file of capture   ex : filecap'
- echo
- echo
- echo -e ' \e[1;31m '
- read -p 'file : ' filecap1
- echo -e ' \e[1;37m '
  echo
  echo
  echo
@@ -305,7 +294,7 @@ read -p 'security : ' apsec
  rm -r -f lewifi1.txt
  echo
  echo
- xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $filecap1 $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | echo -e  '\e[1;35m  close window if there is hanshake '
+ xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w gscap $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | echo -e  '\e[1;35m  close window if there is hanshake '
  echo
  echo
  echo
@@ -326,7 +315,7 @@ read -p 'security : ' apsec
  echo
     if [ $wordw = "n" ]
     then
-    crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a wpa $filecap1-01.cap
+    crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a wpa gscap-01.cap
     echo
     echo
     fi
@@ -345,7 +334,7 @@ read -p 'security : ' apsec
     echo
     echo
     ehco
-    aircrack-ng -w $wordcrack -b $apbssid -a wpa $filecap1-01.cap
+    aircrack-ng -w $wordcrack -b $apbssid -a wpa gscap-01.cap
     fi
     
     
