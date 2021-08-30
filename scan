@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\e[1;34m"plees waitt ...
+echo -e "\e[1;34m"Plees waitt ...
 echo
 echo
 echo "    ip         |        mac          |       name/vendor    "
