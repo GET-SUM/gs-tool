@@ -242,9 +242,9 @@ echo
 echo -e ' \e[1;31m '
 read -p 'interface : ' winterface
 echo -e ' \e[1;37m '
-n_secondes=7
+n_secondes=15
 ( xterm -title wait... -e "airodump-ng $winterface >> lewifi1.txt") &
-sleep 7
+sleep 15
 kill $!
 cat lewifi1.txt
 rm -r -f lewifi1.txt
@@ -294,9 +294,9 @@ read -p 'security : ' apsec
  echo
  echo
  echo
- n_secondes=7
- ( xterm -title wait... -e "airodump-ng -c $apch --bssid $apbssid $winterface >> lewifi1.txt") &
- sleep 7
+ n_secondes=15
+ ( xterm -title "wait-15s..." -e "airodump-ng -c $apch --bssid $apbssid $winterface >> lewifi1.txt") &
+ sleep 15
  kill $!
  echo [ok]
  rm -r -f lewifi1.txt
@@ -557,9 +557,9 @@ echo
 echo
 echo -e  '\e[1;31m '
 read -p 'interface : ' interfaceda
-n_secondes=7
-(xterm -title wait... -e "airodump-ng $interfaceda >> lewifi.txt") &
-sleep 7
+n_secondes=15
+(xterm -title "wait-15S..." -e "airodump-ng $interfaceda >> lewifi.txt") &
+sleep 15
 kill $!
 cat lewifi.txt
 rm -r -f lewifi.txt
