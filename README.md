@@ -2,7 +2,7 @@
 new tool for the pentest on linux
 
 
-command
+Commands
 
 [+] sudo ./gs-tool
 [+] enter
