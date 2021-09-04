@@ -756,7 +756,7 @@ iptables --flush
     --to-destination 192.168.3.1:67
   iptables -t nat -A POSTROUTING -j MASQUERADE
   service apache2 start
-xterm -e dnsspoof -i at0
+xterm -e "dnsspoof -i at0 -f hostdns.txt host 192.168.3.1 and udp 53"
 fi
 
 
