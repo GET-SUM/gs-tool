@@ -92,6 +92,8 @@ then
 echo -e "\e[1;01m "
 echo -e "\e[1;32m "
 echo    '   -------------------------------------------------------------------------  '
+echo    '                [!]   These are educational test options   [!]                '
+echo    '   -------------------------------------------------------------------------  '
 echo    '   [$] clear : clear                  | [$] ifconfig : ifconfig            |  '
 echo -e '\e[1;31m   -------------------------------------------------------------------------  '
 echo    "   [!] don't need monitor mode  |     | [!] need monitor mode  |           |  "
