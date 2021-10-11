@@ -1,5 +1,5 @@
 # gs-tool
-new tool for the pentest on linux
+tool for the pentest on linux
 
 
 Commands
