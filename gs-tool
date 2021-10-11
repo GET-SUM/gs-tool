@@ -28,10 +28,7 @@ echo -e " \e[1;35m ENTER "
 echo -e " \e[1;31m "
 read -p 'gs-tool : ' choix1
 echo
-
 clear
-
-
 
 
 
@@ -80,8 +77,9 @@ sudo ifconfig wlan0 down &>/dev/null
 echo [OK] $interface down
 airmon-ng check kill &>/dev/null
 echo [OK] check kill
+ifconfig $interface down
 iwconfig $interface mode monitor
-
+ifconfig $interface up
      if [ $? -eq 0 ]
      then
      echo -e "\e[1;32" [OK] $interface mode monitor
@@ -91,6 +89,13 @@ iwconfig $interface mode monitor
  
 
 fi
+
+
+
+
+
+
+
 
 
 
@@ -118,6 +123,47 @@ echo    '   --------------------------------------------------------------------
 echo    '   [+] install dependances : ind      | [+] captif portal attack : cpa     |  '
 echo    '   -------------------------------------------------------------------------  '
 fi
+
+
+
+
+
+
+
+
+
+
+
+
+if [ $choix = "patch" ]
+then
+echo
+echo
+echo
+echo
+echo
+echo -e '\e[1;37m  '
+echo " -------------------------- "
+echo " anti deauth attack : pda | "
+echo " -------------------------- "
+echo
+echo
+echo
+echo
+echo
+fi
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -240,6 +286,8 @@ iwconfig
 echo
 echo
 fi
+
+
 
 if [ $choix = "exit" ]
 then 
@@ -682,10 +730,117 @@ fi
 
 
 
-if [ $choix = "da patch" ]
+
+
+
+
+
+
+
+if [ $choix = "pda" ]
 then
-echo "da patch"
+rm -rf patchdeauth.sh
+rm -rf macchanger.txt
+echo
+echo
+echo -e '\e[1;33m '
+echo
+echo ALERTE
+echo
+echo INTERFACE USED
+echo
+echo
+read -p 'interface : ' interfacepda
+echo "
+ $interfacepda" > gstoorrrrrr.txt
+
+
+
+
+echo "\
+
+#!/bin/bash
+
+
+scan12=$tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
+rm -rf patchdeauth.sh
+rm -rf macchanger.txt 
+
+
+
+if [ scan12 -eq 1 ]
+then
+scan12=$tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
 fi
+
+
+
+while [test]
+do
+      sleep 0.5
+      line=$(wc -l < alerte)
+      sleep 0.769
+
+           if [ "$line" => "2" ]
+           then
+
+
+
+
+
+
+           echo '
+                 #!/bin/bash 
+                 clear
+                 while [ mac ]
+                 do
+                 macchanger -a $interfacepda  >> macchanger.txt
+                 echo
+                 echo ----------------------------------
+                 tac macchanger.txt | grep New
+                 echo ----------------------------------
+                 echo
+                 sleep 25
+                 done ' > patchdeauth.sh
+                 chmod 777 *
+
+
+
+
+
+
+           sudo xterm -title alerte-deauth-attack -e ./patchdeauth.sh
+           
+
+
+           fi
+
+
+
+
+done /" > antideauth.sh
+
+
+
+
+sudo chmod 777 *
+echo 
+sleep 3
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
 
 if [ $choix = "bacd" ]
 then
