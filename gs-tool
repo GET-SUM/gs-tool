@@ -774,7 +774,7 @@ echo "\
 #!/bin/bash
 
 
-scan12=$tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
+xterm -e tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
 rm -rf patchdeauth.sh
 rm -rf macchanger.txt 
 
@@ -782,7 +782,7 @@ rm -rf macchanger.txt
 
 if [ scan12 -eq 1 ]
 then
-scan12=$tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
+xterm -e tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
 fi
 
 
@@ -790,7 +790,7 @@ fi
 while [test]
 do
       sleep 0.5
-      line=$(wc -l < alerte)
+      line=$(wc -l < deauth.txt)
       sleep 0.769
 
            if [ "$line" => "2" ]
