@@ -111,7 +111,44 @@ fi
 
 
 
+
+
+
+
+
 if [ $choix = "help" ]
+then
+echo
+echo
+echo
+echo
+echo
+echo -e " \e[1;34m "
+echo
+echo    "                 ---------------------------------------------- "
+echo -e " \e[1;34m                [+]    show deffensives options : defensive   "
+echo -e " \e[1;31m                ---------------------------------------------- "
+echo    "                 [+]    show offensives options : offensive      "
+echo   	 "                 ---------------------------------------------- "
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+echo
+fi
+
+
+
+
+
+
+
+
+
+if [ $choix = "offensive" ]
 then
 echo -e "\e[1;01m "
 echo -e "\e[1;32m "
@@ -147,14 +184,14 @@ fi
 
 
 
-if [ $choix = "patch" ]
+if [ $choix = "defensive" ]
 then
 echo
 echo
 echo
 echo
 echo
-echo -e '\e[1;37m  '
+echo -e "\e[1;34m  "
 echo " -------------------------- "
 echo " anti deauth attack : pda | "
 echo " -------------------------- "
@@ -790,10 +827,10 @@ fi
 while [test]
 do
       sleep 0.5
-      line=$(wc -l < deauth.txt)
+      line=$ (wc -l < deauth.txt)
       sleep 0.769
 
-           if [ "$line" => "2" ]
+           if [ '$line' => 2 ]
            then
 
 
