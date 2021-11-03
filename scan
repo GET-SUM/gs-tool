@@ -3,12 +3,12 @@
 echo -e "\e[1;34m"Plees waitt ...
 echo
 echo
-echo "    ip         |        mac          |       name/vendor    "
+echo "    ip        |       name/vendor    "
 
 scan1='1'
 while [ $? -ne "1" ]
 do
-timeout 0.5 ping -a -c 1 -i 0.1 192.168.$scan1.1 &>/dev/null
+    timeout 0.5 ping -a -c 1 -i 0.1 192.168.$scan1.1 &>/dev/null
 
 
 
@@ -17,18 +17,18 @@ then
    scan='1'
    for i in {1..255}
    do
-   timeout 0.5 ping -a -c 1 -i 0.1 192.168.$scan1.$scan &>/dev/null
+      timeout 0.5 ping -a -c 1 -i 0.1 192.168.$scan1.$scan &>/dev/null
         	if [ $? -eq 0 ]
 		then
-		echo -e "\e[1;33m"_________________________________________________________________________
-		echo -e "\e[1;31m"
-                arp-scan 192.168.$scan1.$scan | grep 192.168.$scan1.$scan
-		nslookup 192.168.$scan1.$scan
-	        echo -e "\e[1;33m"_________________________________________________________________________
-		echo
-                echo
+		  echo -e "\e[1;33m"_________________________________________________________________________
+		  echo -e "\e[1;31m"
+                  echo 192.168.$scan1.$scan
+		  nslookup 192.168.$scan1.$scan
+	          echo -e "\e[1;33m"_________________________________________________________________________
+		  echo
+                  echo
 		fi
-   scan=$((scan+1))
+      scan=$((scan+1))
    done
 fi
 
