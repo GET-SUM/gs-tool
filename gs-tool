@@ -817,9 +817,9 @@ le='2'
 
 for i in {1..99999}
 do
-      sleep 10
+      sleep 8
       line=$(wc -l < deauth.txt)
-      sleep 7.99
+      sleep 5.99
 
            if [ $"line" -ge $"le" ]
            then
@@ -849,7 +849,7 @@ do
                  echo
                  echo
                  echo
-                 sleep 30
+                 sleep 22
                  done ' > patchdeauth.sh
                  chmod 777 *
 
@@ -869,7 +869,7 @@ do
             fi
 
 
-      sleep 16.99
+      sleep 12.99
 
 
 
