@@ -818,7 +818,7 @@ le='2'
 for i in {1..99999}
 do
       sleep 8
-      line=$(wc -l < deauth.txt)
+      line=$"(wc -l < deauth.txt)"
       sleep 5.99
 
            if [ $"line" -ge $"le" ]
