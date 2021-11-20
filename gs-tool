@@ -834,8 +834,7 @@ do
                  clear
                  while [ mac ]
                  do
-                 sleep 5
-                 echo -e "\e[1;34m "
+                 sleep 2
                  echo ------------------------------------------
                  echo -   DeAuthentication AtTaCk PROTECTION   -
                  echo ------------------------------------------
@@ -849,7 +848,7 @@ do
                  echo
                  echo
                  echo
-                 sleep 22
+                 sleep 18
                  done ' > patchdeauth.sh
                  chmod 777 *
 
