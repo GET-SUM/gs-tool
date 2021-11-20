@@ -835,7 +835,7 @@ do
                  while [ mac ]
                  do
                  sleep 5
-                 echo -e '\e[1;34m '
+                 echo -e "\e[1;34m "
                  echo ------------------------------------------
                  echo -   DeAuthentication AtTaCk PROTECTION   -
                  echo ------------------------------------------
