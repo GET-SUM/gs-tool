@@ -18,7 +18,7 @@ then
    for i in {1..255}
    do
       timeout 0.48 ping -c 1 192.168.$scan1.$scan &>/dev/null
-      timeout 0.25 ping -c 1  192.168.$scan1.$scan &>/dev/null
+      timeout 0.209 ping -c 1  192.168.$scan1.$scan &>/dev/null
       timeout 0.1 ping -c 1 192.168.$scan1.$scan &>/dev/null
         	if [ $? -eq 0 ]
 		then
