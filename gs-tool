@@ -818,7 +818,7 @@ le='2'
 for i in {1..99999}
 do
       sleep 8
-      line=$(wc -l < deauth.txt)
+      line=$"(wc -l < deauth.txt)"
       sleep 5.99
 
            if [ $"line" -ge $"le" ]
@@ -840,7 +840,7 @@ do
                  echo ------------------------------------------
                  ifconfig $interfacepda down
                  echo
-                 echo
+                 sleep 1
                  echo
                  echo ----------------------------------
                  macchanger -a $interfacepda  >> macchanger.txt
@@ -848,7 +848,7 @@ do
                  echo
                  echo
                  echo
-                 sleep 18
+                 sleep 11
                  done ' > patchdeauth.sh
                  chmod 777 *
 
