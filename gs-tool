@@ -756,7 +756,7 @@ echo -e  '\e[1;37m '
 echo
 echo
 n_secondes=5
-( "xterm -title wait... -e airodump-ng --bssid $bssidda -c $chanelda $interfaceda" ) & 
+(xterm -title wait... -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda" ) & 
 sleep 5
 kill $!
 clear
