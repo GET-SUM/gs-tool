@@ -395,9 +395,9 @@ echo
 echo -e ' \e[1;31m '
 read -p 'interface : ' winterface
 echo -e ' \e[1;37m '
-n_secondes=35
+n_secondes=15
 ( xterm -title wait... -e "airodump-ng $winterface >> lewifi1.txt") &
-sleep 35
+sleep 15
 kill $!
 cat lewifi1.txt
 rm -r -f lewifi1.txt
