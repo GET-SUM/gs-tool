@@ -839,17 +839,17 @@ do
                  echo ------------------------------------------
                  echo -   DeAuthentication AtTaCk PROTECTION   -
                  echo ------------------------------------------
-                 ifconfig $interfacepda down
                  echo
                  sleep 1
                  echo
-                 echo ----------------------------------
-                 macchanger -a $interfacepda  >> macchanger.txt
-                 echo ----------------------------------
+                 echo --------------------------------------------------------------------
+                 ifconfig $interfacepda down
+                 macchanger -a $interfacepda 
+                 echo --------------------------------------------------------------------
                  echo
                  echo
                  echo
-                 sleep 11
+                 sleep 10
                  done ' > patchdeauth.sh
                  chmod 777 *
 
