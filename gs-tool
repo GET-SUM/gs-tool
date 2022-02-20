@@ -816,7 +816,7 @@ le='2'
 
 
 
-for i in {1..99999}
+for i in {1..999999}
 do
       sleep 8
       line=\$(wc -l < deauth.txt)
@@ -848,7 +848,7 @@ do
                  echo
                  echo
                  echo
-                 sleep 7
+                 sleep 5
                  done ' > patchdeauth.sh
                  chmod 777 *
 
