@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Vérification que l'utilisateur est en tant que root
+if [ "$EUID" -ne 0 ]
+  then echo "Veuillez exécuter ce script en tant que root."
+  exit
+fi
+
+# Mise à jour des paquets
+sudo apt-get update
+
+# Installation de dnsmasq et hostapd
+sudo apt-get install dnsmasq hostapd
+
+# Configuration de dnsmasq
+sudo bash -c 'cat <<EOF > /etc/dnsmasq.conf
+interface=wlan0
+listen-address=192.168.42.1
+bind-interfaces
+server=8.8.8.8
+domain-needed
+bogus-priv
+dhcp-range=192.168.42.10,192.168.42.250,12h
+EOF'
+
+# Configuration de hostapd
+sudo bash -c 'cat <<EOF > /etc/hostapd/hostapd.conf
+interface=wlan0
+driver=nl80211
+ssid=MonReseau
+hw_mode=g
+channel=6
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=MotDePasseSecure
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+EOF'
+
+# Redémarrage de dnsmasq et hostapd pour appliquer les modifications
+sudo service dnsmasq restart
+sudo service hostapd restart
+
+# Configuration de la redirection de port pour rediriger les requêtes vers le portail captif
+sudo iptables --flush
+sudo iptables --table nat --flush
+sudo iptables --delete-chain
+sudo iptables --table nat --delete-chain
+sudo iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
+sudo iptables --append FORWARD --in-interface wlan0 -j ACCEPT
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.42.1:80
